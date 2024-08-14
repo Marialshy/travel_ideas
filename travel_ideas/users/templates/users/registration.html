@@ -1,0 +1,23 @@
+{% extends 'travels/header.html' %}
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Join today</legend>
+            <!-- Render Django Forms as paragraph -->
+            {{ form.as_p }} 
+        </fieldset>
+
+        By registreing, you accept the Terms of Service and Privacy Note
+
+        <div>
+            <button type="submit">sign up</button>
+        </div>
+    </form>
+    <div>
+        <small>Already have an account? <a href="/login">sign in</a></small>
+    </div>
+</div>
+
+{% endblock content %}
